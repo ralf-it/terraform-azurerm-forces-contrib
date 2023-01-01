@@ -16,6 +16,10 @@ variable "environment" {
   })
   description = "Environment for all resources"
 }
+variable "customer" {
+  type = string
+  default = "internal"
+}
 variable "location" {
   default = "westeurope"
 }

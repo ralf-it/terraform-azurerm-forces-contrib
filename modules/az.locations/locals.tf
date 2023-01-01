@@ -1,6 +1,6 @@
 module "locations" {
   source  = "Azure/regions/azurerm"
-  version = ">=0.5.1, < 1.0.0"
+  version = "0.5.2"
 }
 
 locals {

@@ -12,6 +12,8 @@ module "update" {
     prefix = var.prefix
     suffix = var.suffix
 
+    customer = var.customer
+
     myip             = local.myip
     myip_cidr        = local.myip_cidr
     allowed_ips      = local.allowed_ips

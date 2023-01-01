@@ -11,6 +11,7 @@ locals {
     playbook_name    = local.playbook_name
     module_name      = null
     module_version   = null
+    customer = var.customer
   }
 }
 

@@ -47,6 +47,8 @@ locals {
   module_name    = var.module_name != null ? var.module_name : try(var.configs.module_name, null)
   module_dirname = var.module_path != null ? basename(var.module_path) : try(var.configs.module_dirname, null)
   module_version = var.module_path != null ? file("${var.module_path}/VERSION") : try(var.configs.module_version, null)
+
+  customer = try(var.configs.customer, "internal")
 }
 
 locals {
@@ -55,6 +57,7 @@ locals {
     suffix           = local.suffix
     prefixStr        = local.prefixStr
     suffixStr        = local.suffixStr
+    customer        = local.customer
     playbook_name    = local.playbook_name
     playbook_version = local.playbook_version
     module_name      = local.module_name
@@ -76,6 +79,7 @@ locals {
       module_name      = local.module_name
       module_version   = local.module_version
       module_dirname   = local.module_dirname
+      customer = local.customer
     })
   })
 }
